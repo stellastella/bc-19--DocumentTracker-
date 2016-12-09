@@ -1,0 +1,18 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+<div class="container">
+            <div class="google-profile">
+               <!-- <p><i class="fa fa-google fa-4"></i></p> -->
+                {% if user.local.email %}
+                    {%set user = user.local %}
+                {% endif %}
+                {% if user.google.email %}
+                    {%set user = user.google %}
+                {% endif %}
+                <p><span>Welcome {{user.username}}</span></p>
+               
+            </div>
+        </div>
+    
+{% endblock body %}
